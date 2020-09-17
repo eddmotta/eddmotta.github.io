@@ -21,7 +21,7 @@
     window.onload = function() {
 		var id = GetURLParameter('loja');
 		<!-- Deep link URL for existing users with app already installed on their device -->
-			window.location = `meumicromarket://portalmicromarket.com.br/?&loja=${id}`;
+			window.location = `meumicromarket://telemetria.uneedconveniencia.com.br/?&loja=${id}`;
 		var isAndroid = /(android)/i.test(navigator.userAgent);
 		<!-- Download URL for new users to download the app -->
 		if(isAndroid){
