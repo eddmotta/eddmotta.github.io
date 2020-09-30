@@ -20,9 +20,13 @@
 		}
 	}
 	
+	function isEmpty(str) {
+    return (!str || 0 === str.length);
+	}
+	
     window.onload = function() {
 		var id = GetURLParameter('loja');
-		if(id ==""){
+		if(isEmpty(id)){
 			<!-- Se for vendpago -->
 				<!-- window.location = `meumicromarket://portalmicromarket.com.br`; -->
 			<!-- Se for Uneed -->
