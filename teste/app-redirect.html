@@ -27,13 +27,13 @@
     window.onload = function() {
 		var id = GetURLParameter('loja');
 		if(isEmpty(id)){
-		window.location = `https://google.com`;
+		location.replace('https://google.com');
 			<!-- Se for vendpago -->
 				<!-- window.location = `meumicromarket://portalmicromarket.com.br`; -->
 			<!-- Se for Uneed -->
 			<!--	window.location = `meumicromarket://telemetria.uneedconveniencia.com.br`; -->
 		} else {
-		window.location = `https://facebook.com`;
+		location.replace('https://facebook.com');
 			<!-- Se for vendpago -->
 				<!-- window.location = `meumicromarket://portalmicromarket.com.br/?&loja=${id}`; -->
 			<!-- Se for Uneed -->
