@@ -22,12 +22,19 @@
 	
     window.onload = function() {
 		var id = GetURLParameter('loja');
-		<!-- Deep link URL para abrir app já instalado -->
+		if(id ==""){
 			<!-- Se for vendpago -->
-			<!-- window.location = `meumicromarket://portalmicromarket.com.br/?&loja=${id}`; -->
+				<!-- window.location = `meumicromarket://portalmicromarket.com.br`; -->
 			<!-- Se for Uneed -->
-			window.location = `meumicromarket://telemetria.uneedconveniencia.com.br/?&loja=${id}`;
-			
+				window.location = `meumicromarket://telemetria.uneedconveniencia.com.br`;
+		} else {
+			<!-- Se for vendpago -->
+				<!-- window.location = `meumicromarket://portalmicromarket.com.br/?&loja=${id}`; -->
+			<!-- Se for Uneed -->
+				window.location = `meumicromarket://telemetria.uneedconveniencia.com.br/?&loja=${id}`;
+		}
+		
+		<!-- Se não abriu o app, redireciona para a play store ou apple store--> 	
 		var isAndroid = /(android)/i.test(navigator.userAgent);
 		if(isAndroid){
 		<!-- Open Google Play App -->
@@ -51,23 +58,26 @@ function downloadFunciOS() {
 }
 function openFunc() {
 	var id = GetURLParameter('loja');
-	
-	<!-- Se for vendpago -->
-		<!-- var linkApp = `meumicromarket://portalmicromarket.com.br/?&loja=${id}` -->
-	<!-- Se for Uneed -->
-		var linkApp = `meumicromarket://telemetria.uneedconveniencia.com.br/?&loja=${id}`
-		
+	var linkApp;
+	if(id ==""){
+		<!-- Se for vendpago -->
+			<!-- var linkApp = `meumicromarket://portalmicromarket.com.br` -->
+		<!-- Se for Uneed -->
+			linkApp = `meumicromarket://telemetria.uneedconveniencia.com.br`;
+	} else {
+		<!-- Se for vendpago -->
+			<!-- var linkApp = `meumicromarket://portalmicromarket.com.br/?&loja=${id}` -->
+		<!-- Se for Uneed -->
+			linkApp = `meumicromarket://telemetria.uneedconveniencia.com.br/?&loja=${id}`;
+	}
 	location.replace(linkApp);
 }
 </script>
 
-    <!-- button to Download App for new app users -->
     <button onclick="downloadFuncAndroid()">Download Android App</button>
 	
-	 <!-- button to Download App for new app users -->
     <button onclick="downloadFunciOS()">Download iOS App</button>
  
-    <!-- button to Open App to specific screen for existing app users -->
     <button onclick="openFunc()">Open App</button>
  
 </body>
