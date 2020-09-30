@@ -27,15 +27,17 @@
     window.onload = function() {
 		var id = GetURLParameter('loja');
 		if(isEmpty(id)){
+		window.location = `google.com`;
 			<!-- Se for vendpago -->
 				<!-- window.location = `meumicromarket://portalmicromarket.com.br`; -->
 			<!-- Se for Uneed -->
-				window.location = `meumicromarket://telemetria.uneedconveniencia.com.br`;
+			<!--	window.location = `meumicromarket://telemetria.uneedconveniencia.com.br`; -->
 		} else {
+		window.location = `facebook.com`;
 			<!-- Se for vendpago -->
 				<!-- window.location = `meumicromarket://portalmicromarket.com.br/?&loja=${id}`; -->
 			<!-- Se for Uneed -->
-				window.location = `meumicromarket://telemetria.uneedconveniencia.com.br/?&loja=${id}`;
+			<!--	window.location = `meumicromarket://telemetria.uneedconveniencia.com.br/?&loja=${id}`; -->
 		}
 		
 		<!-- Se não abriu o app, redireciona para a play store ou apple store--> 	
