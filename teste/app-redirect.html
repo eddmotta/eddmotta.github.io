@@ -27,24 +27,22 @@
     window.onload = function() {
 		var id = GetURLParameter('loja');
 		if(isEmpty(id)){
-		location.replace('https://www.google.com');
 			<!-- Se for vendpago -->
 				<!-- window.location = `meumicromarket://portalmicromarket.com.br`; -->
 			<!-- Se for Uneed -->
-			<!--	window.location = `meumicromarket://telemetria.uneedconveniencia.com.br`; -->
+			window.location = `meumicromarket://telemetria.uneedconveniencia.com.br`; 
 		} else {
-		location.replace('https://www.facebook.com.br');
 			<!-- Se for vendpago -->
 				<!-- window.location = `meumicromarket://portalmicromarket.com.br/?&loja=${id}`; -->
 			<!-- Se for Uneed -->
-			<!--	window.location = `meumicromarket://telemetria.uneedconveniencia.com.br/?&loja=${id}`; -->
+			window.location = `meumicromarket://telemetria.uneedconveniencia.com.br/?&loja=${id}`;
 		}
 		
 		<!-- Se não abriu o app, redireciona para a play store ou apple store--> 	
 		var isAndroid = /(android)/i.test(navigator.userAgent);
 		if(isAndroid){
 		<!-- Open Google Play App -->
-			setTimeout("window.location = 'market://details?id=com.nianticlabs.pokemongo'", 1000);
+			setTimeout("window.location = 'market://details?id=com.vendpago.payblu_android&hl=pt_BR'", 1000);
 		} else  {
 		<!-- Open Apple Store App -->
 			setTimeout("window.location = 'itms-apps://itunes.apple.com/br/app/payblu/id1225958348?mt=8'",1000);
